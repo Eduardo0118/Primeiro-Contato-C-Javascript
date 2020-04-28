@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nacionalidade</title>
+    
+    <style>
+    body {
+        background-color: rgb(161, 159, 159);
+        width: 200px;
+        font: normal 16pt Arial;
+    }   
+    </style>
+</head>
+<body>
+    <h1>Cripto!</h1>
+    Escreva uma frase: <input type="text" name="teste" id="teste">
+    <input type="button" value="Check" onclick="resolver()">    
+    <div id="res"> 
+    </div>
+
+    <script>
+        function calculate() {
+    var input = document.getElementById("teste").value.toUpperCase();
+    var result = "";
+
+    for(var i = 0; i<input.length; i++){ //Passa por cada caracter do input
+
+        var posicaoDaLetraNoAlfabeto = input.charCodeAt(i)-64; //Identifica qual letra é do alfabeto
+        var letraComDeslocamento = (posicaoDaLetraNoAlfabeto + key) % 26; //Faz o deslocamento de César e mantém dentro do alfabeto (26 letras)
+        letraComDeslocamento = letraComDeslocamento == 0 ? 26 : letraComDeslocamento; //MOD retornar 0 caso o resultado seja 26, tem que tratar isso
+        result += values[letraComDeslocamento-1]; //Faz -1 porque a letra 1 (A) está no índice 0 do teu array.
+    }
+
+    document.getElementById("res").innerHTML = result;
+}
+    </script>
+</body>
+</html>
